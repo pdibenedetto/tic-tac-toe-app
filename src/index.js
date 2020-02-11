@@ -1,82 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Square from './components/Square/Square'
 import './index.css';
 
-// class Square extends React.Component {
+
+// class Board extends React.Component {
+//   // this.squares = {Array(9).fill(null)}
 //   // constructor(props) {
 //   //   super(props);
 //   //   this.state = {
-//   //     value: null,
+//   //     squares: Array(9).fill(null),
+//   //     xIsNext: true,
 //   //   };
 //   // }
-//   render() {
+//
+//   renderSquare(i) {
 //     return (
-//       <button className="square"
-//               onClick={() => this.props.onClick({value: 'X'})}>
-//         {this.props.value}
-//       </button>
+//       <Square value={this.props.squares[i]}
+//               onClick={() => this.props.onClick(i)}/>
 //     );
 //   }
+//
+//   render() {
+//
+//     return (
+//         <div>
+//           <div className="board-row">
+//             {this.renderSquare(0)}
+//             {this.renderSquare(1)}
+//             {this.renderSquare(2)}
+//           </div>
+//           <div className="board-row">
+//             {this.renderSquare(3)}
+//             {this.renderSquare(4)}
+//             {this.renderSquare(5)}
+//           </div>
+//           <div className="board-row">
+//             {this.renderSquare(6)}
+//             {this.renderSquare(7)}
+//             {this.renderSquare(8)}
+//           </div>
+//         </div>
+//       );
+//   }
 // }
-
-function Square(props) {
-  return(
-      <button className="square" onClick={props.onClick}>
-        {props.value}
-      </button>
-  )
-}
-
-// const Square = (props) => {
-//   return (
-//     <button className="square"
-//             onClick={() => props.onClick()}>
-//       {props.value}
-//     </button>
-//   )
-// }
-
-
-class Board extends React.Component {
-  // this.squares = {Array(9).fill(null)}
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     squares: Array(9).fill(null),
-  //     xIsNext: true,
-  //   };
-  // }
-
-  renderSquare(i) {
-    return (
-      <Square value={this.props.squares[i]}
-              onClick={() => this.props.onClick(i)}/>
-    );
-  }
-
-  render() {
-
-    return (
-        <div>
-          <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-          </div>
-        </div>
-      );
-  }
-}
 
 class Game extends React.Component {
   constructor(props) {
